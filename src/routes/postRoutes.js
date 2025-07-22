@@ -4,7 +4,8 @@ import {
   getAllPostsController,
   getPostController,
   likePostController,
-  unlikePostController
+  unlikePostController,
+  deletePostController
 } from '../controllers/postController.js';
 
 const router = express.Router();
@@ -22,6 +23,7 @@ router.get('/:postId', getPostController);
 router.post('/:postId/like', likePostController);
 
 // Unlike a post
-router.delete('/:postId/like', unlikePostController);
+router.delete('/:postId/like', unlikePostController); 
+router.delete('/:postId', deletePostController); 
 
 export default router;
